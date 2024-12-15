@@ -1,36 +1,42 @@
 import React from 'react';
-import '../styles/home.css';
-import logo from '../assets/img/logo.png';
-import background from '../assets/img/bg.jpg';
+import { Link } from 'react-router-dom'; 
+import '../styles/home.css'; 
+import logo from '../assets/img/logo.png'; 
+import background from '../assets/img/bg.jpg'; 
+
 
 const Home = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg no-wrap">
-      <img src={logo} alt="logo" ></img>
+    <div className="home-container">
+      <img src={background} alt="background" className="background-image"/>
+      <nav className="navbar navbar-expand-lg">
+        <img src={logo} alt="Logo" />
         <h2 className="text-nowrap">Smk Prakarya Internasional</h2>
         <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarSupportedContent"></div>
-            <button type="button" className="btn btn-dark">Log in</button>
+          <Link to="/login"> 
+            <button type="button" className="btn btn-dark">
+              Log in
+            </button>
+          </Link>
         </div>
       </nav>
       
-      <div className="container pt-5">
-      <img src={background} alt="background" className="background-image"></img>
-        <div className="d-flex justify-content-center align-items-center mt-5">
-          <h1 class="h1-container ">ABSENSI XI PPLG 2</h1>
+      
+      <div className="home-page">
+        <div className="container pt-5">
+          <div className="d-flex justify-content-center align-items-center mt-5">
+            <h1 className="h1-container">ABSENSI XI PPLG 2</h1>
+          </div>
         </div>
-      </div>
-      
-      <hr class="line"/>
-      
-      <div className="yow">
-        <p>
-          halo semuanya jadi disini web ini digunakan <br />
-          untuk mengabsen kehadiran murid <br />
-          tapi, web ini hanya digunakan khusus <br />
-          untuk kelas xi pplg 2 yahh.
-        </p>
+       
+        <div className="yow">
+          <p>
+            halo semuanya jadi disini web ini digunakan <br />
+            untuk mengabsen kehadiran murid <br />
+            tapi, web ini hanya digunakan khusus <br />
+            untuk kelas xi pplg 2 yahh.
+          </p>
+        </div>
       </div>
     </div>
   );
